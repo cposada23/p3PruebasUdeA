@@ -1,0 +1,93 @@
+#array-buttons-area{
+  margin:10px;
+}
+
+#result-area{
+  margin:10px;
+  overflow: auto;
+}
+
+#result-area #array {
+  float: left;
+  margin: 10px;
+}
+
+#result-area #calculations {
+  float: left;
+  margin: 10px;
+}
+
+/*Style for buttons*/
+button {
+  padding: 20px;
+  margin: 0 30px 30px 0;
+  background-color: #1b1e24;
+  color: #D5DDE5;
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3);
+}
+
+button:hover{
+  background: #757575;
+  color: inherit;
+  cursor: pointer;
+}
+
+button:active{
+  box-shadow: 0 3px 0 #00823F;
+  border-color: black;
+}
+
+/*Style for table*/
+.custom-table{
+  border-radius:3px;
+  background-color:#009ED8;
+  color: inherit;
+  border-collapse: collapse;
+}
+
+/*tr{
+  border-top: 1px solid #C1C3D1;
+  border-bottom: 1px solid #C1C3D1;
+}*/
+
+/*tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}*/
+
+th{
+  color:#D5DDE5;;
+  background:#1b1e24;
+  padding: 10px;
+}
+
+td {
+  background:#3e94ec;
+  color: inherit;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+ .file-input-wrapper {
+    
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+  }
+  .file-input-wrapper > input[type="file"] {
+    font-size: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+  }
+  .file-input-wrapper > .btn-file-input {
+    display: inline-block;
+    
+    height: 40px;
+  }

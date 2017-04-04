@@ -1,3 +1,69 @@
-<h1>
-  {{title}}
-</h1>
+<section>
+  <div class="file-input-wrapper">
+    <button  ion-button round full>Seleccionar Archivo</button>
+    <input type="file" name="file"  accept=".csv"  (change) ="fileChanged($event)" />
+  </div>
+</section>
+
+<section *ngIf="error">
+  <h1 style="color: red">{{error}}</h1>
+</section>
+
+<section *ngIf="!error && vector">
+  <div id="result-area">
+    <div id="array">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>
+                VS
+            </th>
+
+            <th>
+                S
+            </th>
+
+            <th>
+                M
+            </th>
+
+            <th>
+                L
+            </th>
+            
+            <th>
+                VL
+            </th>            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td *ngFor = "let dato of rangos">{{dato}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div id="result-area">
+    <div id="array">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th *ngFor=" let titulo of titulos; let i = index ">
+              <button (click)="seleccionar(i)">{{titulo}}</button>    
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <td *ngFor=" let fila of datos">
+            <tr *ngFor = "let dato of fila "> {{dato}}</tr>
+            <!--<tr>{{fila}}</tr>               -->
+          </td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
