@@ -133,10 +133,17 @@ export class Operation {
         return vector;
     }
 
+    /**
+     * Toma un vector con strings ['1', '2.2'] y retorna uno numerico [1, 2.2]
+     * @param vector a convertir en numerico
+     * @return resultado: vector numerico
+     * @throws TypeError cuando el vector contiene elementos a los que no se le pueden hacer castin a number
+     */
+
     stringToNumber(vector: Array<any>): Array<number> {
         const resultado: Array<number> = [];
         for (const i in vector) {
-            if (vector.hasOwnProperty(i)) {
+            if (vector.hasOwnProperty(i)) { // Necesario por el prototype
                 const dato = Number(vector[i]);
                 if (dato) {
                     resultado.push(dato);
@@ -159,6 +166,10 @@ export class Operation {
         });
     }
 
+    /**
+     * Crea un vector con los elementos logaritmicos log(xi);
+     * @param vector a calcular los elementos logaritmicos
+     */
     vectorLogaritmo(vector: Array<number>): Array<number> {
         return vector.map((val) => {
             return this.roudToN(Math.log(val), 4);
@@ -175,6 +186,12 @@ export class Operation {
         });
     }
 
+    /**
+     * calcula los rangos
+     * @param media
+     * @param desviacion
+     * @return [VS, S, M, L, VL]
+     */
     logarithmicRanges(media: number, desviacion: number): Array<number> {
         let VS = this.roudToN( media - 2 * desviacion , 4);
         let S = this.roudToN(media - desviacion, 4);
